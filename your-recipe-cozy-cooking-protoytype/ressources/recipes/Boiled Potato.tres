@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://c1q5hh8e2ljsj"]
+
+[ext_resource type="Script" uid="uid://b17nybhqaqrfl" path="res://Scripts/recipe.gd" id="1_3u86y"]
+[ext_resource type="Resource" uid="uid://buwb0yp1albqr" path="res://ressources/ingredient/Base Ingredient/Potato.tres" id="1_xpsh5"]
+[ext_resource type="Resource" uid="uid://dtwskcn2wsucm" path="res://ressources/ingredient/Boiled Potato.tres" id="2_78d5w"]
+
+[resource]
+script = ExtResource("1_3u86y")
+input = ExtResource("1_xpsh5")
+output = ExtResource("2_78d5w")
+metadata/_custom_type_script = "uid://b17nybhqaqrfl"

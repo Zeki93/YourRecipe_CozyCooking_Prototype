@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://d4hd21v2qrpvl"]
+
+[ext_resource type="Script" uid="uid://w05a5y4nsngr" path="res://Scripts/globals_player.gd" id="1_ndnd3"]
+[ext_resource type="Script" uid="uid://b6n60dqmp1sx3" path="res://player.gd" id="1_pt58c"]
+[ext_resource type="PackedScene" uid="uid://dsuobx2hspbtl" path="res://Scenes/workspace/workspace.tscn" id="2_ndnd3"]
+[ext_resource type="Script" uid="uid://dxxtw70q8r5gk" path="res://recipe_menu.gd" id="4_nrwyk"]
+[ext_resource type="Script" uid="uid://bqwno00g4klte" path="res://Scenes/inventory/player_inventory.gd" id="4_xjxh8"]
+[ext_resource type="Script" uid="uid://b17nybhqaqrfl" path="res://Scripts/recipe.gd" id="4_xofcu"]
+[ext_resource type="Resource" uid="uid://di4shv48fdian" path="res://ressources/recipes/Chopped Potato.tres" id="5_vipva"]
+[ext_resource type="Resource" uid="uid://dmdhfd4dqr31f" path="res://ressources/recipes/Mashed Potato.tres" id="6_et6uk"]
+[ext_resource type="Resource" uid="uid://c1q5hh8e2ljsj" path="res://ressources/recipes/Boiled Potato.tres" id="7_vipva"]
+[ext_resource type="PackedScene" uid="uid://vsixxw6v61tp" path="res://Scenes/ressource/ressource.tscn" id="8_et6uk"]
+[ext_resource type="Resource" uid="uid://buwb0yp1albqr" path="res://ressources/ingredient/Base Ingredient/Potato.tres" id="10_wi601"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75te7"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_75te7"]
+material = SubResource("StandardMaterial3D_75te7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ofhgc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gpnjt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_75te7"]
+
+[node name="Main_3D" type="Node3D" unique_id=1945295875]
+script = ExtResource("1_ndnd3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1012311052]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16.447037, 1.4210855e-14)
+
+[node name="Floor" type="Node3D" parent="." unique_id=1156084858]
+transform = Transform3D(15, 0, 0, 0, 0.1, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1392903190]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/StaticBody3D" unique_id=147359890]
+mesh = SubResource("BoxMesh_75te7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1700273386]
+shape = SubResource("BoxShape3D_ofhgc")
+
+[node name="Player" type="Node3D" parent="." unique_id=886083563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4468555, 0)
+script = ExtResource("1_pt58c")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Player" unique_id=1700833961]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/CharacterBody3D" unique_id=1986241701]
+mesh = SubResource("CapsuleMesh_gpnjt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CharacterBody3D" unique_id=915803418]
+shape = SubResource("CapsuleShape3D_75te7")
+
+[node name="Camera3D" type="Camera3D" parent="Player/CharacterBody3D" unique_id=1219614860]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 6.3213463, 2.1897852)
+
+[node name="Recipe menu" type="Control" parent="." unique_id=996037659]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_nrwyk")
+
+[node name="Button2" type="Button" parent="Recipe menu" unique_id=1305010728]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 204.0
+offset_right = 159.0
+offset_bottom = 313.0
+text = "Test"
+
+[node name="Button" type="Button" parent="Recipe menu" unique_id=899842311]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 317.0
+offset_right = 158.0
+offset_bottom = 420.0
+text = "Test"
+
+[node name="Inventory" type="Control" parent="." unique_id=616160669]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_xjxh8")
+
+[node name="Button" type="Button" parent="Inventory" unique_id=216017835]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 423.0
+offset_right = 297.0
+offset_bottom = 644.0
+theme_override_font_sizes/font_size = 64
+text = "Test"
+
+[node name="Interactables" type="Node3D" parent="." unique_id=476040993]
+
+[node name="Chopping board" parent="Interactables" unique_id=1950450744 instance=ExtResource("2_ndnd3")]
+transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 3, -5.4058867, 0.87627244, -5.674185)
+recipies = Array[ExtResource("4_xofcu")]([ExtResource("5_vipva"), ExtResource("6_et6uk")])
+interactable_name = "Chopping board"
+
+[node name="Boiler" parent="Interactables" unique_id=526621586 instance=ExtResource("2_ndnd3")]
+transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 3, 0.114106655, 0.87627244, -5.674185)
+recipies = Array[ExtResource("4_xofcu")]([ExtResource("7_vipva")])
+interactable_name = "Boiler"
+default_color = Color(8.663535e-07, 0.37090018, 0.4869163, 1)
+
+[node name="Potato" parent="Interactables" unique_id=1250454156 instance=ExtResource("8_et6uk")]
+transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 3, 5.3650594, 0.87627244, -2.6380787)
+ressource = ExtResource("10_wi601")
+interactable_name = "Potato"
+highlight_color = Color(0, 0.9843137, 0, 1)
+default_color = Color(0.84921944, 0.75724953, 0.16464871, 1)

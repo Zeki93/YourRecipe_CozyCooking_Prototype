@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="dish" format=3 uid="uid://blbjxlu031m3i"]
+
+[ext_resource type="Script" uid="uid://cba5i20dvdxkt" path="res://Scripts/dish.gd" id="1_lthqp"]
+
+[resource]
+resource_name = "Mashed Potato"
+script = ExtResource("1_lthqp")
+name = "Mashed potato"
+metadata/_custom_type_script = "uid://cba5i20dvdxkt"

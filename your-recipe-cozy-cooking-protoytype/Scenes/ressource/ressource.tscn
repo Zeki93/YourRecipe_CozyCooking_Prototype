@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://vsixxw6v61tp"]
+
+[ext_resource type="Script" uid="uid://dx5c2igsobt1e" path="res://Scenes/ressource/ressource.gd" id="1_fvrco"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_75te7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofhgc"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ofhgc"]
+size = Vector3(1, 1, 1.0040283)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wiwsh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pt58c"]
+
+[node name="Ressource" type="Node3D" unique_id=1250454156 node_paths=PackedStringArray("mesh", "text")]
+transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_fvrco")
+mesh = NodePath("Workbench/StaticBody3D/MeshInstance3D")
+text = NodePath("Workbench/Label3D")
+
+[node name="Workbench" type="Node3D" parent="." unique_id=451115917]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0.5487981, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Workbench" unique_id=1212776758]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Workbench/StaticBody3D" unique_id=713492311]
+shape = SubResource("BoxShape3D_75te7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Workbench/StaticBody3D" unique_id=1203324248]
+material_override = SubResource("StandardMaterial3D_ofhgc")
+mesh = SubResource("BoxMesh_ofhgc")
+
+[node name="Label3D" type="Label3D" parent="Workbench" unique_id=378292372]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3, 0)
+text = "TEST
+"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1084664774]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=950380372]
+shape = SubResource("BoxShape3D_wiwsh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1236773857]
+mesh = SubResource("BoxMesh_pt58c")

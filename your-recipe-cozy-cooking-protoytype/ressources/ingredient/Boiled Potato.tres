@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ingredient" format=3 uid="uid://dtwskcn2wsucm"]
+
+[ext_resource type="Script" uid="uid://04qlkip5bpu3" path="res://Scripts/ingredient.gd" id="1_xrd1c"]
+
+[resource]
+resource_name = "Boiled Potato"
+script = ExtResource("1_xrd1c")
+name = "Boiled potato"
+metadata/_custom_type_script = "uid://04qlkip5bpu3"
