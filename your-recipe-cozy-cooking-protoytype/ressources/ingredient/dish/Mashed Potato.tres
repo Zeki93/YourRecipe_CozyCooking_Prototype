@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="dish" format=3 uid="uid://blbjxlu031m3i"]
 
-[ext_resource type="Script" uid="uid://cba5i20dvdxkt" path="res://Scripts/dish.gd" id="1_lthqp"]
+[ext_resource type="Script" uid="uid://cba5i20dvdxkt" path="res://Scripts/ressources/dish.gd" id="1_lthqp"]
 
 [resource]
 resource_name = "Mashed Potato"

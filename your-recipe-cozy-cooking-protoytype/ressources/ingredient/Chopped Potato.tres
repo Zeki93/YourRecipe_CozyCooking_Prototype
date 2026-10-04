@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ingredient" format=3 uid="uid://muqjgrvokyl8"]
 
-[ext_resource type="Script" uid="uid://04qlkip5bpu3" path="res://Scripts/ingredient.gd" id="1_7t6jd"]
+[ext_resource type="Script" uid="uid://04qlkip5bpu3" path="res://Scripts/ressources/ingredient.gd" id="1_7t6jd"]
 
 [resource]
 resource_name = "Chopped Potato"

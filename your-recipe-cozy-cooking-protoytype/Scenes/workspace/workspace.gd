@@ -9,9 +9,11 @@ func _ready() -> void:
 func _physics_process(delta):
 	super(delta)
 	if(interactable_can_interact() and Input.is_action_pressed("Interact")):
-		for recipe in recipies:
-			if (globals_player.player_inventory == recipe.input):
-				globals_player.add_to_inventory.emit(recipe.output)
-				pass
-			pass
-		pass
+		globals_ui.open_recipe_menu.emit(calculate_possible_recipies());
+
+func calculate_possible_recipies() -> Array[Recipe]:
+	var possible_recipies: Array[Recipe]
+	for recipe in recipies:
+		if (globals_player.player_inventory == recipe.input):
+			possible_recipies.push_front(recipe)
+	return possible_recipies;

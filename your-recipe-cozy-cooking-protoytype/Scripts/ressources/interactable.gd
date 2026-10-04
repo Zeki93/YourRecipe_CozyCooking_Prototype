@@ -26,6 +26,9 @@ func interactable_dim():
 	mesh.material_override.albedo_color = default_color
 
 func interactable_can_interact() -> bool:
+	if(!globals_player.can_player_move_or_interact()):
+		return false
+		
 	if(globals_player.player == null):
 		return false
 		

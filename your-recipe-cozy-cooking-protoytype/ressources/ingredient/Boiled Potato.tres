@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ingredient" format=3 uid="uid://dtwskcn2wsucm"]
 
-[ext_resource type="Script" uid="uid://04qlkip5bpu3" path="res://Scripts/ingredient.gd" id="1_xrd1c"]
+[ext_resource type="Script" uid="uid://04qlkip5bpu3" path="res://Scripts/ressources/ingredient.gd" id="1_xrd1c"]
 
 [resource]
 resource_name = "Boiled Potato"

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://d4hd21v2qrpvl"]
 
-[ext_resource type="Script" uid="uid://w05a5y4nsngr" path="res://Scripts/globals_player.gd" id="1_ndnd3"]
-[ext_resource type="Script" uid="uid://b6n60dqmp1sx3" path="res://player.gd" id="1_pt58c"]
+[ext_resource type="Script" uid="uid://w05a5y4nsngr" path="res://Scripts/globals/globals_player.gd" id="1_ndnd3"]
+[ext_resource type="Script" uid="uid://b6n60dqmp1sx3" path="res://Scripts/player.gd" id="1_pt58c"]
 [ext_resource type="PackedScene" uid="uid://dsuobx2hspbtl" path="res://Scenes/workspace/workspace.tscn" id="2_ndnd3"]
-[ext_resource type="Script" uid="uid://dxxtw70q8r5gk" path="res://recipe_menu.gd" id="4_nrwyk"]
+[ext_resource type="PackedScene" uid="uid://di3xjt0k8jgbt" path="res://Scenes/UI/recipe_menu.tscn" id="3_xjxh8"]
 [ext_resource type="Script" uid="uid://bqwno00g4klte" path="res://Scenes/inventory/player_inventory.gd" id="4_xjxh8"]
-[ext_resource type="Script" uid="uid://b17nybhqaqrfl" path="res://Scripts/recipe.gd" id="4_xofcu"]
+[ext_resource type="Script" uid="uid://b17nybhqaqrfl" path="res://Scripts/ressources/recipe.gd" id="4_xofcu"]
 [ext_resource type="Resource" uid="uid://di4shv48fdian" path="res://ressources/recipes/Chopped Potato.tres" id="5_vipva"]
 [ext_resource type="Resource" uid="uid://dmdhfd4dqr31f" path="res://ressources/recipes/Mashed Potato.tres" id="6_et6uk"]
 [ext_resource type="Resource" uid="uid://c1q5hh8e2ljsj" path="res://ressources/recipes/Boiled Potato.tres" id="7_vipva"]
@@ -56,29 +56,7 @@ shape = SubResource("CapsuleShape3D_75te7")
 [node name="Camera3D" type="Camera3D" parent="Player/CharacterBody3D" unique_id=1219614860]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 6.3213463, 2.1897852)
 
-[node name="Recipe menu" type="Control" parent="." unique_id=996037659]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("4_nrwyk")
-
-[node name="Button2" type="Button" parent="Recipe menu" unique_id=1305010728]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 204.0
-offset_right = 159.0
-offset_bottom = 313.0
-text = "Test"
-
-[node name="Button" type="Button" parent="Recipe menu" unique_id=899842311]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 317.0
-offset_right = 158.0
-offset_bottom = 420.0
-text = "Test"
+[node name="Recipe menu" parent="." unique_id=1598806699 instance=ExtResource("3_xjxh8")]
 
 [node name="Inventory" type="Control" parent="." unique_id=616160669]
 layout_mode = 3
