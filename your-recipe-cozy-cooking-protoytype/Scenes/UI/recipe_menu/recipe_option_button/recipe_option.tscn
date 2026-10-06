@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://10stgsnv3q2v"]
+
+[ext_resource type="Script" uid="uid://ci2ev3p6kadop" path="res://Scenes/UI/recipe_menu/recipe_option_button/recipe_option.gd" id="1_20sg0"]
+
+[node name="Option" type="Button" unique_id=92518358]
+offset_left = 2.0
+offset_top = 317.0
+offset_right = 359.0
+offset_bottom = 658.0
+text = "Test"
+script = ExtResource("1_20sg0")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

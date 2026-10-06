@@ -6,6 +6,8 @@
 
 [resource]
 script = ExtResource("1_ufg0x")
+name = "Mashed potato"
+discovery_process = "Mash"
 input = ExtResource("1_dalxi")
 output = ExtResource("2_eimna")
 metadata/_custom_type_script = "uid://b17nybhqaqrfl"

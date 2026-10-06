@@ -4,7 +4,10 @@ var player: CharacterBody3D;
 var player_inventory : ingredient
 var player_state : player_states
 
+var discovered_recipies: Array[Recipe]
+
 signal add_to_inventory(ingredient) 
+
 
 
 func _ready() -> void:
@@ -13,7 +16,7 @@ func _ready() -> void:
 	#Signals
 	add_to_inventory.connect(on_add_to_inventory)
 	globals_ui.open_recipe_menu.connect(on_open_menu)
-	globals_ui.open_recipe_menu.connect(on_close_menu)
+	globals_ui.close_recipe_menu.connect(on_close_menu)
 	pass
 
 func on_add_to_inventory(item : ingredient):
