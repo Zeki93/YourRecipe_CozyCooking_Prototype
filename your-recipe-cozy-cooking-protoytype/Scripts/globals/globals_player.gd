@@ -7,7 +7,7 @@ var player_state : player_states
 var discovered_recipies: Array[Recipe]
 
 signal add_to_inventory(ingredient) 
-
+signal clear_inventory(ingredient) 
 
 
 func _ready() -> void:
@@ -15,15 +15,26 @@ func _ready() -> void:
 	
 	#Signals
 	add_to_inventory.connect(on_add_to_inventory)
-	globals_ui.open_recipe_menu.connect(on_open_menu)
-	globals_ui.close_recipe_menu.connect(on_close_menu)
+	clear_inventory.connect(on_clear_inventory)
+	globals_ui.open_recipe_menu_processing.connect(on_open_menu_processor)
+	globals_ui.close_recipe_menu_processing.connect(on_close_menu)
+	globals_ui.open_recipe_menu_combining.connect(on_open_menu_combiner)
+	globals_ui.close_recipe_menu_combining.connect(on_close_menu)
 	pass
 
 func on_add_to_inventory(item : ingredient):
 	player_inventory = item
 	pass
+	
+func on_clear_inventory():
+	player_inventory = null
+	pass
 
-func on_open_menu(recipies: Array[Recipe]):
+func on_open_menu_processor(recipies: Array[Recipe]):
+	player_state = player_states.in_menu
+	pass
+
+func on_open_menu_combiner(recipies: Array[Recipe], combiner_object : combiner):
 	player_state = player_states.in_menu
 	pass
 

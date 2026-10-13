@@ -3,13 +3,15 @@
 [ext_resource type="Script" uid="uid://w05a5y4nsngr" path="res://Scripts/globals/globals_player.gd" id="1_ndnd3"]
 [ext_resource type="Script" uid="uid://b6n60dqmp1sx3" path="res://Scripts/player.gd" id="1_pt58c"]
 [ext_resource type="PackedScene" uid="uid://dsuobx2hspbtl" path="res://Scenes/workspace/workspace.tscn" id="2_ndnd3"]
-[ext_resource type="PackedScene" uid="uid://di3xjt0k8jgbt" path="res://Scenes/UI/recipe_menu/recipe_menu.tscn" id="3_xjxh8"]
+[ext_resource type="PackedScene" uid="uid://17sl62igmxuk" path="res://Scenes/workspace/combiner.tscn" id="3_h6orv"]
+[ext_resource type="PackedScene" uid="uid://di3xjt0k8jgbt" path="res://Scenes/UI/recipe_menu/recipe_menu_processing/recipe_menu_processing.tscn" id="3_xjxh8"]
 [ext_resource type="Script" uid="uid://bqwno00g4klte" path="res://Scenes/inventory/player_inventory.gd" id="4_xjxh8"]
 [ext_resource type="Script" uid="uid://b17nybhqaqrfl" path="res://Scripts/ressources/recipe.gd" id="4_xofcu"]
 [ext_resource type="Resource" uid="uid://di4shv48fdian" path="res://ressources/recipes/Chopped Potato.tres" id="5_vipva"]
 [ext_resource type="Resource" uid="uid://dmdhfd4dqr31f" path="res://ressources/recipes/Mashed Potato.tres" id="6_et6uk"]
 [ext_resource type="Resource" uid="uid://c1q5hh8e2ljsj" path="res://ressources/recipes/Boiled Potato.tres" id="7_vipva"]
 [ext_resource type="PackedScene" uid="uid://vsixxw6v61tp" path="res://Scenes/supply/supply.tscn" id="8_et6uk"]
+[ext_resource type="PackedScene" uid="uid://cttln0r5wa44j" path="res://Scenes/UI/recipe_menu/mixing_menu/recipe_menu_combining.tscn" id="10_238tj"]
 [ext_resource type="Resource" uid="uid://buwb0yp1albqr" path="res://ressources/ingredient/Base Ingredient/Potato.tres" id="10_wi601"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75te7"]
@@ -56,27 +58,12 @@ shape = SubResource("CapsuleShape3D_75te7")
 [node name="Camera3D" type="Camera3D" parent="Player/CharacterBody3D" unique_id=1219614860]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 6.3213463, 2.1897852)
 
-[node name="Recipe menu" parent="." unique_id=1598806699 instance=ExtResource("3_xjxh8")]
-
-[node name="Inventory" type="Control" parent="." unique_id=616160669]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("4_xjxh8")
-
-[node name="Button" type="Button" parent="Inventory" unique_id=216017835]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 423.0
-offset_right = 297.0
-offset_bottom = 644.0
-theme_override_font_sizes/font_size = 64
-text = "Test"
-
 [node name="Interactables" type="Node3D" parent="." unique_id=476040993]
 
-[node name="Chopping board" parent="Interactables" unique_id=1950450744 instance=ExtResource("2_ndnd3")]
+[node name="Counter" parent="Interactables" unique_id=1950450744 instance=ExtResource("3_h6orv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79110384, 5.978099)
+
+[node name="Chopping board" parent="Interactables" unique_id=1608052640 instance=ExtResource("2_ndnd3")]
 transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 3, -5.4058867, 0.87627244, -5.674185)
 recipies = Array[ExtResource("4_xofcu")]([ExtResource("5_vipva"), ExtResource("6_et6uk")])
 interactable_name = "Chopping board"
@@ -93,3 +80,40 @@ ressource = ExtResource("10_wi601")
 interactable_name = "Potato"
 highlight_color = Color(0, 0.9843137, 0, 1)
 default_color = Color(0.84921944, 0.75724953, 0.16464871, 1)
+
+[node name="UI" type="Control" parent="." unique_id=224179672]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Recipe menu mixing" parent="UI" unique_id=1598806699 instance=ExtResource("10_238tj")]
+layout_mode = 1
+offset_left = 360.0
+offset_top = 100.0
+offset_right = 760.0
+offset_bottom = 480.0
+
+[node name="Recipe menu" parent="UI" unique_id=617801969 instance=ExtResource("3_xjxh8")]
+visible = false
+layout_mode = 1
+offset_left = 360.0
+offset_top = 100.0
+offset_right = 760.0
+offset_bottom = 342.0
+recipe_option = null
+
+[node name="Inventory" type="Control" parent="UI" unique_id=616160669]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_xjxh8")
+
+[node name="Button" type="Button" parent="UI/Inventory" unique_id=216017835]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 423.0
+offset_right = 297.0
+offset_bottom = 644.0
+theme_override_font_sizes/font_size = 64
+text = "Test"

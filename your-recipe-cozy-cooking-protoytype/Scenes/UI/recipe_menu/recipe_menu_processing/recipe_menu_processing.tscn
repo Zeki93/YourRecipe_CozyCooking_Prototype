@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://di3xjt0k8jgbt"]
 
-[ext_resource type="Script" uid="uid://dxxtw70q8r5gk" path="res://Scenes/UI/recipe_menu/recipe_menu.gd" id="1_5mhqs"]
+[ext_resource type="Script" uid="uid://dxxtw70q8r5gk" path="res://Scenes/UI/recipe_menu/recipe_menu_processing/recipe_menu_processing.gd" id="1_5mhqs"]
 
 [node name="Recipe menu" type="Control" unique_id=1598806699]
-visible = false
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5

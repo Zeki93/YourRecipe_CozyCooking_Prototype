@@ -5,4 +5,6 @@ extends Node
 func _process(delta: float) -> void:
 	if(globals_player.player_inventory != null):
 		display_text_button.text = globals_player.player_inventory.name
+	else:
+		display_text_button.text = "Empty"
 	pass

@@ -12,7 +12,6 @@ func show_recipe_option(_recipe: Recipe):
 	button.text = get_recipe_option_text();
 	show()
 
-
 func get_recipe_option_text() -> String:
 	if(globals_player.discovered_recipies.find(recipe) != -1):
 		return recipe.name
@@ -21,6 +20,6 @@ func get_recipe_option_text() -> String:
 
 func _on_pressed() -> void:
 	globals_player.add_to_inventory.emit(recipe.output);
-	globals_ui.close_recipe_menu.emit()
+	globals_ui.close_recipe_menu_processing.emit()
 	globals_player.discovered_recipies.push_front(recipe);
 	pass # Replace with function body.

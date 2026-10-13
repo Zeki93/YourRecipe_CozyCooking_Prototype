@@ -8,11 +8,12 @@ func _ready() -> void:
 	
 func _physics_process(delta):
 	super(delta)
+	var val:bool = interactable_can_interact()
 	if(interactable_can_interact() and Input.is_action_pressed("Interact")):
-		globals_ui.open_recipe_menu.emit(calculate_possible_recipies());
+		globals_ui.open_recipe_menu_processing.emit(calculate_possible_recipies());
 	else: 
 		if Input.is_action_pressed("Cancel"):
-			globals_ui.close_recipe_menu.emit()
+			globals_ui.close_recipe_menu_processing.emit()
 
 func calculate_possible_recipies() -> Array[Recipe]:
 	var possible_recipies: Array[Recipe]
