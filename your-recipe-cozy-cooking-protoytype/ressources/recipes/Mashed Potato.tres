@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dmdhfd4dqr31f"]
 
 [ext_resource type="Resource" uid="uid://dtwskcn2wsucm" path="res://ressources/ingredient/Boiled Potato.tres" id="1_dalxi"]
+[ext_resource type="Script" uid="uid://04qlkip5bpu3" path="res://Scripts/ressources/ingredient.gd" id="1_eimna"]
 [ext_resource type="Script" uid="uid://b17nybhqaqrfl" path="res://Scripts/ressources/recipe.gd" id="1_ufg0x"]
 [ext_resource type="Resource" uid="uid://blbjxlu031m3i" path="res://ressources/ingredient/dish/Mashed Potato.tres" id="2_eimna"]
 
@@ -8,6 +9,6 @@
 script = ExtResource("1_ufg0x")
 name = "Mashed potato"
 discovery_process = "Mash"
-input = ExtResource("1_dalxi")
+input = Array[ExtResource("1_eimna")]([ExtResource("1_dalxi")])
 output = ExtResource("2_eimna")
 metadata/_custom_type_script = "uid://b17nybhqaqrfl"

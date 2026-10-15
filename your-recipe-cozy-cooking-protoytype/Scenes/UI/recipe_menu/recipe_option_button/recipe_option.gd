@@ -19,7 +19,5 @@ func get_recipe_option_text() -> String:
 		return recipe.discovery_process
 
 func _on_pressed() -> void:
-	globals_player.add_to_inventory.emit(recipe.output);
-	globals_ui.close_recipe_menu_processing.emit()
-	globals_player.discovered_recipies.push_front(recipe);
+	globals_ui.cook_recipe.emit(recipe)
 	pass # Replace with function body.

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://btsp2bxnwv3k7"]
+
+[ext_resource type="Script" uid="uid://04qlkip5bpu3" path="res://Scripts/ressources/ingredient.gd" id="1_2cdfe"]
+[ext_resource type="Resource" uid="uid://buwb0yp1albqr" path="res://ressources/ingredient/Base Ingredient/Potato.tres" id="2_c6qfh"]
+[ext_resource type="Script" uid="uid://b17nybhqaqrfl" path="res://Scripts/ressources/recipe.gd" id="2_qr44i"]
+[ext_resource type="Resource" uid="uid://muqjgrvokyl8" path="res://ressources/ingredient/Chopped Potato.tres" id="3_aikap"]
+[ext_resource type="Resource" uid="uid://blbjxlu031m3i" path="res://ressources/ingredient/dish/Mashed Potato.tres" id="4_g3uss"]
+
+[resource]
+script = ExtResource("2_qr44i")
+name = "Test"
+discovery_process = "Test"
+input = Array[ExtResource("1_2cdfe")]([ExtResource("2_c6qfh"), ExtResource("3_aikap")])
+output = ExtResource("4_g3uss")
+metadata/_custom_type_script = "uid://b17nybhqaqrfl"
