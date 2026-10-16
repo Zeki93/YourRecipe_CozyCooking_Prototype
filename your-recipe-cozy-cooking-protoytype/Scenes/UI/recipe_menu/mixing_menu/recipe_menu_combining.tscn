@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cttln0r5wa44j"]
 
 [ext_resource type="Script" uid="uid://imdxu76gtkq7" path="res://Scenes/UI/recipe_menu/mixing_menu/recipe_menu_combining.gd" id="1_ok3y8"]
+[ext_resource type="PackedScene" uid="uid://dt48uogu4whn7" path="res://Scenes/UI/recipe_menu/cancel_button/cancel_menu.tscn" id="2_2r1ut"]
 
 [node name="Recipe menu combining" type="Control" unique_id=1598806699]
 visible = false
@@ -43,6 +44,9 @@ size_flags_horizontal = 3
 text = "Take:"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=782918893]
+layout_mode = 2
+
+[node name="VBoxContainer_Cancel" parent="Menu" unique_id=1070702865 instance=ExtResource("2_2r1ut")]
 layout_mode = 2
 
 [connection signal="pressed" from="Menu/HBoxContainer/Button_ingredient_1" to="." method="_on_button_ingredient_1_pressed"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://di3xjt0k8jgbt"]
 
 [ext_resource type="Script" uid="uid://dxxtw70q8r5gk" path="res://Scenes/UI/recipe_menu/recipe_menu_processing/recipe_menu_processing.gd" id="1_5mhqs"]
+[ext_resource type="PackedScene" uid="uid://dt48uogu4whn7" path="res://Scenes/UI/recipe_menu/cancel_button/cancel_menu.tscn" id="2_sr16r"]
 
 [node name="Recipe menu" type="Control" unique_id=1598806699]
 layout_mode = 3
@@ -29,4 +30,7 @@ size_flags_horizontal = 4
 text = "What should i do..?"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=782918893]
+layout_mode = 2
+
+[node name="VBoxContainer_Cancel" parent="Menu" unique_id=1070702865 instance=ExtResource("2_sr16r")]
 layout_mode = 2
