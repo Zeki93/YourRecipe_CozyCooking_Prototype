@@ -33,15 +33,65 @@ script = ExtResource("1_ndnd3")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1012311052]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16.447037, 1.4210855e-14)
 
-[node name="Floor" type="Node3D" parent="." unique_id=1156084858]
+[node name="World" type="Node3D" parent="." unique_id=1156084858]
 transform = Transform3D(15, 0, 0, 0, 0.1, 0, 0, 0, 15, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1392903190]
+[node name="Kitchen" type="Node3D" parent="World" unique_id=2013135597]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/StaticBody3D" unique_id=147359890]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Kitchen" unique_id=1392903190]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Kitchen/StaticBody3D" unique_id=147359890]
 mesh = SubResource("BoxMesh_75te7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1700273386]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Kitchen/StaticBody3D" unique_id=1700273386]
+shape = SubResource("BoxShape3D_ofhgc")
+
+[node name="Pantry" type="Node3D" parent="World" unique_id=1660272077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1593176, 0, 0)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="World/Pantry" unique_id=1054452919]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Pantry/StaticBody3D2" unique_id=1957901524]
+mesh = SubResource("BoxMesh_75te7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pantry/StaticBody3D2" unique_id=387151472]
+shape = SubResource("BoxShape3D_ofhgc")
+
+[node name="Resturant" type="Node3D" parent="World" unique_id=610632625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19193, 0, 0)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="World/Resturant" unique_id=651614396]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Resturant/StaticBody3D2" unique_id=1373376600]
+mesh = SubResource("BoxMesh_75te7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Resturant/StaticBody3D2" unique_id=952283855]
+shape = SubResource("BoxShape3D_ofhgc")
+
+[node name="Hallway" type="Node3D" parent="World" unique_id=1354259265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59391516, 0, 0)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="World/Hallway" unique_id=1845654355]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Hallway/StaticBody3D2" unique_id=1983568980]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("BoxMesh_75te7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Hallway/StaticBody3D2" unique_id=1744906435]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_ofhgc")
+
+[node name="Hallway2" type="Node3D" parent="World" unique_id=559460160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58764994, 0, 0)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="World/Hallway2" unique_id=1249218983]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Hallway2/StaticBody3D2" unique_id=1081818937]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("BoxMesh_75te7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Hallway2/StaticBody3D2" unique_id=1467259269]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 shape = SubResource("BoxShape3D_ofhgc")
 
 [node name="Player" type="Node3D" parent="." unique_id=886083563]
@@ -61,7 +111,10 @@ transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49
 
 [node name="Interactables" type="Node3D" parent="." unique_id=476040993]
 
-[node name="Counter" parent="Interactables" unique_id=1950450744 instance=ExtResource("3_h6orv")]
+[node name="Counter2" parent="Interactables" unique_id=1950450744 instance=ExtResource("3_h6orv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.576636, 1.1570046, 2.5822072)
+
+[node name="Counter" parent="Interactables" unique_id=794772540 instance=ExtResource("3_h6orv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79110384, 5.978099)
 recipies = Array[ExtResource("4_xofcu")]([ExtResource("5_vomke")])
 
